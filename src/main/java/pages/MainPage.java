@@ -71,8 +71,8 @@ public class MainPage {
 
 
     public MainPage clickCreateAccountBtn(){
-        WebElement dynamicElement = (new WebDriverWait(driver, 10))
-                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@class='layout-btn register-button btn-wrapper dark-background btn btn-null btn-md']")));
+        WebDriverWait dynamicElement = (new WebDriverWait(driver, 10));
+        dynamicElement.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@class='layout-btn register-button btn-wrapper dark-background btn btn-null btn-md']")));
         Actions builder = new Actions(driver);
         builder.moveToElement(createAccountBtn).build().perform();
                         createAccountBtn.sendKeys(Keys.ENTER);
@@ -86,7 +86,7 @@ public class MainPage {
     }
 
 
-    public String y = "Test.Account"+ randomInt() + "@ubi.com";
+    public String username = "Test.Account"+ randomInt() + "@ubi.com";
 
     public MainPage accountCreation(){
         WebElement dynamicElement = (new WebDriverWait(driver, 10))
@@ -98,8 +98,8 @@ public class MainPage {
 //                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[2]/div/div[1]/div/div/div/div/iframe")));
         driver.switchTo().frame(1);
 
-        inputEmail.sendKeys(y);
-        confirmInputEmail.sendKeys(y);
+        inputEmail.sendKeys(username);
+        confirmInputEmail.sendKeys(username);
         inputPassword.sendKeys("Test.Account");
         inputUsername.sendKeys("Account"+randomInt());
         Select day = new Select(dayOfBirth);
@@ -112,7 +112,7 @@ public class MainPage {
         builer.moveToElement(termsOfUse).click().build().perform();
         builer.moveToElement(shareInformation).click().build().perform();
         createAccount.click();
-        System.out.println(y);
+        System.out.println(username);
         return  this;
     }
 
