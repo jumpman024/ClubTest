@@ -29,7 +29,7 @@ public class MainPageTest extends BaseTest {
 
     }
 
-    @Test (description = "create Account Button - Open Pop-up window")
+    @Test (description = "create Account Button - Open Pop-up window рплор" )
     public void AccountRegistrationOpenPopUp(){
 
             boolean actualValue = mainPage.clickCreateAccountBtn()
@@ -44,6 +44,7 @@ public class MainPageTest extends BaseTest {
         {
             // this part is executed when an exception (in this example InterruptedException) occurs
         }
+        //hghjghjgjhj
     }
 
     @Test (description = "Create Account")

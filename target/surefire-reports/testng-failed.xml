@@ -5,6 +5,7 @@
     <classes>
       <class name="MainPageTest">
         <methods>
+          <include name="AccountRegistrationOpenPopUp"/>
           <include name="startUp"/>
           <include name="closeDown"/>
           <include name="setup"/>

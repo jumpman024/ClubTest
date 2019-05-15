@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods, 1 failed,   2 passed</span>
+                    <span class="method-stats">3 methods, 2 failed,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -103,6 +103,11 @@
                       <span>
                         <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="MainPageTest" hash-for-method="AccountCreation">AccountCreation</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="MainPageTest" hash-for-method="AccountRegistrationOpenPopUp">AccountRegistrationOpenPopUp</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Command_line_suite -->
@@ -117,11 +122,6 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="MainPageTest" hash-for-method="AccountRegistrationBtnClicked">AccountRegistrationBtnClicked</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="MainPageTest" hash-for-method="AccountRegistrationOpenPopUp">AccountRegistrationOpenPopUp</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Command_line_suite -->
@@ -147,12 +147,51 @@
                   <a name="AccountCreation">
                   </a> <!-- AccountCreation -->
                   <span class="method-name">AccountCreation</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.xpath: //button[@class=&apos;layout-btn register-button btn-wrapper dark-background btn btn-null btn-m&apos;] (tried for 10 second(s) with 500 milliseconds interval)
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@id=&apos;AccountEmail&apos;]&quot;}
+  (Session info: chrome=74.0.3729.131)
+  (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
+System info: host: &apos;KIV-WKS-TT136&apos;, ip: &apos;172.16.39.194&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_201&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 74.0.3729.6 (255758eccf3d24..., userDataDir: C:\Users\KBEZSM~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:61736}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 74.0.3729.131, webStorageEnabled: true}
+Session ID: 6bd9a687af1372f5fb2344eb8481add4
+*** Element info: {Using=xpath, value=//input[@id=&apos;AccountEmail&apos;]}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.sendKeys(Unknown Source)
+	at pages.MainPage.accountCreation(MainPage.java:101)
+	at MainPageTest.AccountCreation(MainPageTest.java:52)
+... Removed 41 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Create Account)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="AccountRegistrationOpenPopUp">
+                  </a> <!-- AccountRegistrationOpenPopUp -->
+                  <span class="method-name">AccountRegistrationOpenPopUp</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.xpath: /html/body/div[2]/div/div[1]/div/div/div/div/iframe (tried for 10 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:113)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:283)
-	at pages.MainPage.accountCreation(MainPage.java:93)
-	at MainPageTest.AccountCreation(MainPageTest.java:52)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //button[@class=&apos;layout-btn register-button btn-wrapper dark-background btn btn-null btn-m&apos;]
+	at pages.MainPage.popUpIsDisplayed(MainPage.java:84)
+	at MainPageTest.AccountRegistrationOpenPopUp(MainPageTest.java:36)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: /html/body/div[2]/div/div[1]/div/div/div/div/iframe
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
 System info: host: &apos;KIV-WKS-TT136&apos;, ip: &apos;172.16.39.194&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_201&apos;
@@ -168,7 +207,7 @@ Driver info: driver.version: unknown
 ... Removed 37 stack frames
 </div> <!-- stack-trace -->
                   <em>
-(Create Account)                  </em>
+(create Account Button - Open Pop-up window Ñ€Ð¿Ð»Ð¾Ñ€)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -186,15 +225,6 @@ Driver info: driver.version: unknown
                   <span class="method-name">AccountRegistrationBtnClicked</span>
                   <em>
 (Click create Account Button )                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="AccountRegistrationOpenPopUp">
-                  </a> <!-- AccountRegistrationOpenPopUp -->
-                  <span class="method-name">AccountRegistrationOpenPopUp</span>
-                  <em>
-(create Account Button - Open Pop-up window)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -253,22 +283,22 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'AccountCreation')
+data.setCell(0, 1, 'AccountRegistrationOpenPopUp')
 data.setCell(0, 2, 'MainPageTest')
-data.setCell(0, 3, 10963);
+data.setCell(0, 3, 10995);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'AccountRegistrationOpenPopUp')
+data.setCell(1, 1, 'AccountCreation')
 data.setCell(1, 2, 'MainPageTest')
-data.setCell(1, 3, 6090);
+data.setCell(1, 3, 10983);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'AccountRegistrationBtnClicked')
 data.setCell(2, 2, 'MainPageTest')
-data.setCell(2, 3, 5995);
+data.setCell(2, 3, 5931);
 window.suiteTableData['Command_line_suite']= { tableData: data, tableDiv: 'times-div-Command_line_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 23 seconds</span>
+              <span class="suite-total-time">Total running time: 27 seconds</span>
               <div id="times-div-Command_line_suite">
               </div> <!-- times-div-Command_line_suite -->
             </div> <!-- times-div -->
@@ -301,49 +331,51 @@ return data;
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">startUp</span>
-                <span class="method-start">6854 ms</span>
+                <span class="method-start">13350 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">AccountCreation</span>
-                <span class="method-start">6889 ms</span>
+                <span class="method-start">13384 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeDown</span>
-                <span class="method-start">17869 ms</span>
+                <span class="method-start">24391 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">17957 ms</span>
+                <span class="method-start">24523 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">startUp</span>
-                <span class="method-start">24000 ms</span>
+                <span class="method-start">37345 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">AccountRegistrationBtnClicked</span>
-                <span class="method-start">24009 ms</span>
+                <span class="method-start">37351 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeDown</span>
-                <span class="method-start">30013 ms</span>
+                <span class="method-start">43287 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">30107 ms</span>
+                <span class="method-start">43390 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">startUp</span>
-                <span class="method-start">36059 ms</span>
+                <span class="method-start">55451 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">AccountRegistrationOpenPopUp</span>
-                <span class="method-start">36064 ms</span>
+                <span class="method-start">55458 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeDown</span>
-                <span class="method-start">42163 ms</span>
+                <span class="method-start">66460 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
