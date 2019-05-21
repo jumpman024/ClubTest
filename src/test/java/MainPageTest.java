@@ -1,9 +1,14 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pages.MainPage;
+import java.io.IOException;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import java.io.File;
+import org.apache.commons.io.FileUtils;
 
 public class MainPageTest extends BaseTest {
 
@@ -14,6 +19,8 @@ public class MainPageTest extends BaseTest {
     public void startUp(){
         mainPage = new MainPage(driver);
     }
+
+
 
     @Test (description =  "Click create Account Button ")
     public void AccountRegistrationBtnClicked(){
@@ -44,7 +51,6 @@ public class MainPageTest extends BaseTest {
         {
             // this part is executed when an exception (in this example InterruptedException) occurs
         }
-        //hghjghjgjhj
     }
 
     @Test (description = "Create Account")
@@ -60,4 +66,12 @@ public class MainPageTest extends BaseTest {
             // this part is executed when an exception (in this example InterruptedException) occurs
         }
     }
+
+    @AfterMethod
+    public void screenShot() throws IOException {
+        TakesScreenshot scr = ((TakesScreenshot) driver);
+        File file1 = scr.getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(file1, new File("C:\\Users\\kbezsmertnyi\\IdeaProjects\\screenshots\\test1.PNG"));
+    }
+
 }

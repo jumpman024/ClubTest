@@ -29,7 +29,7 @@ public class MainPage {
     @FindBy (xpath = "//button[@class='layout-btn register-button btn-wrapper dark-background btn btn-null btn-md']")
     private WebElement createAccountBtn;
 
-    @FindBy (xpath = "/html/body/div[2]/div/div[1]/div/div/div/div/iframe")
+    @FindBy (xpath = "/html/body/div[3]/div/div[1]/div/div/div/div/ifram")
     private WebElement popUp;
 
     @FindBy (xpath = "//button[@class='layout-btn btn btn-primary btn-md']")
@@ -80,23 +80,25 @@ public class MainPage {
     }
 
     public boolean popUpIsDisplayed(){
-        WebElement dynamicElement = (new WebDriverWait(driver, 10))
-                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[2]/div/div[1]/div/div/div/div/iframe")));
+        WebDriverWait dynamicElement = (new WebDriverWait(driver, 10));
+        dynamicElement.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[3]/div/div[1]/div/div/div/div/iframe")));
         return popUp.isDisplayed();
     }
+
 
 
     public String username = "Test.Account"+ randomInt() + "@ubi.com";
 
     public MainPage accountCreation(){
-        WebElement dynamicElement = (new WebDriverWait(driver, 10))
-                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@class='layout-btn register-button btn-wrapper dark-background btn btn-null btn-md']")));
+//        WebDriverWait dynamicElement = (new WebDriverWait(driver, 10));
+//        dynamicElement.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@class='layout-btn register-button btn-wrapper dark-background btn btn-null btn-md']")));
         Actions builder = new Actions(driver);
         builder.moveToElement(createAccountBtn).build().perform();
         createAccountBtn.sendKeys(Keys.ENTER);
 //        WebElement dynamic1Element = (new WebDriverWait(driver, 10))
 //                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[2]/div/div[1]/div/div/div/div/iframe")));
-        driver.switchTo().frame(1);
+        driver.switchTo().frame(popUp);
+
 
         inputEmail.sendKeys(username);
         confirmInputEmail.sendKeys(username);
