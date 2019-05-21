@@ -1,3 +1,5 @@
+package tests;
+
 import io.qameta.allure.Attachment;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -24,6 +26,11 @@ import static utils.TestHelper.selectTime;
 
 public class BaseTest {
     public WebDriver driver;
+
+    public WebDriver getDriver() {
+        return driver;
+    }
+
     private final Properties config = Config.loadProperties("test.properties");
 
     @BeforeMethod
