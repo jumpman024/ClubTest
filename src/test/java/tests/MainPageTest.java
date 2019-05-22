@@ -54,9 +54,10 @@ public class MainPageTest extends BaseTest {
     }
 
     @Test (description = "Create Account")
-    public void AccountCreation(){
-        mainPage.clickCreateAccountBtn()
+    public void AccountCreation(String inputUsername){
+        Object actualValue = mainPage.clickCreateAccountBtn()
                .accountCreation();
+        Object expectedField = mainPage.accountCreation();
         try
         {
             Thread.sleep(10000);
@@ -65,6 +66,8 @@ public class MainPageTest extends BaseTest {
         {
             // this part is executed when an exception (in this example InterruptedException) occurs
         }
+        Assert.assertEquals(actualValue,expectedField);
+
     }
 
     @AfterMethod

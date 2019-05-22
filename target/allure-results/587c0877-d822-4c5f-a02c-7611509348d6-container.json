@@ -1,0 +1,1 @@
+{"uuid":"587c0877-d822-4c5f-a02c-7611509348d6","name":"tests.MainPageTest.screenShot","description":"","start":1558448936193,"stop":1558448937017,"children":["fe81a445-52a3-4928-9a5e-8eb9678c7324"],"afters":[{"name":"screenShot","status":"passed","stage":"finished","description":"","start":1558448936193,"stop":1558448937017}]}
