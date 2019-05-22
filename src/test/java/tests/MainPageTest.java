@@ -57,7 +57,7 @@ public class MainPageTest extends BaseTest {
     public void AccountCreation(String inputUsername){
         Object actualValue = mainPage.clickCreateAccountBtn()
                .accountCreation();
-        Object expectedField = mainPage.accountCreation();
+        Object expectedField = mainPage.popUpIsDisplayed();
         try
         {
             Thread.sleep(10000);

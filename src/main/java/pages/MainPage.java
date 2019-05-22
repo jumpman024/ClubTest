@@ -29,7 +29,7 @@ public class MainPage {
     @FindBy (xpath = "//button[@class='layout-btn register-button btn-wrapper dark-background btn btn-null btn-md']")
     private WebElement createAccountBtn;
 
-    @FindBy (xpath = "/html/body/div[3]/div/div[1]/div/div/div/div/ifram")
+    @FindBy (xpath = "/html/body/div[3]/div/div[1]/div/div/div/div/iframe")
     private WebElement popUp;
 
     @FindBy (xpath = "//button[@class='layout-btn btn btn-primary btn-md']")
